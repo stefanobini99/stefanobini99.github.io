@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stefano Bini — Software Developer</title>
+  <meta name="description" content="Portfolio of Stefano Bini — Java & Spring Developer" />
+
+  <style>
+    :root {
+      --bg-1:#0b1120;
+      --bg-2:#111827;
+      --card:#1a2335;
+      --muted:#9aa7bf;
+      --accent:#7dd3fc;
+      --accent2:#b596ff;
+      --radius:14px;
+      --maxw:1100px;
+      --glass:rgba(255,255,255,0.04);
+    }
+
+    * {box-sizing:border-box;}
+    body {
+      margin:0;
+      font-family:Inter,system-ui;
+      color:#eaf1ff;
+      background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      padding:26px;
+    }
+    .wrap {max-width:var(--maxw);margin:auto;}
+
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:34px;
+    }
+    .brand {display:flex;gap:18px;align-items:center;}
+
+    .avatar {
+      width:76px;height:76px;
+      border-radius:18px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      border:2px solid rgba(255,255,255,0.15);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;
+      color:#05121c;
+      font-size:26px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.55);
+    }
+    h1 {margin:0;font-size:27px;letter-spacing:.5px;}
+    .lead {margin:4px 0 0;font-size:15px;color:var(--muted);}
+
+    /* Badges */
+    .top-badges {display:flex;gap:12px;margin-top:10px;flex-wrap:wrap;}
+    .badge-top-img {
+      height:44px;padding:4px;border-radius:7px;
+      background:var(--glass);
+      box-shadow:0 4px 14px rgba(0,0,0,0.4);
+      transition:.18s ease;opacity:.9;
+    }
+    .badge-top-img:hover {
+      transform:scale(1.1);opacity:1;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    }
+
+    /* Layout */
+    main {
+      display:grid;
+      grid-template-columns:1fr 350px;
+      gap:26px;
+    }
+    @media(max-width:980px){main{grid-template-columns:1fr;}}
+
+    .card {
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 8px 26px rgba(0,0,0,0.55);
+      transition:box-shadow .25s ease, transform .25s ease;
+    }
+    .card:hover {
+      transform:translateY(-3px);
+      box-shadow:0 12px 34px rgba(0,0,0,0.65);
+    }
+
+    .section {margin-bottom:18px;}
+    h2 {font-size:17px;margin:0 0 14px;color:#eaf6ff;letter-spacing:0.3px;}
+    .muted {color:var(--muted);font-size:14px;}
+
+    /* Pills */
+    .roles {display:flex;gap:8px;flex-wrap:wrap;}
+    .pill {
+      padding:6px 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      font-size:13px;font-weight:600;
+      color:var(--accent);
+      border:1px solid rgba(125,211,252,0.15);
+      text-decoration:none;
+    }
+
+    /* Skills */
+    .skills-group {margin-bottom:18px;}
+    .skills-title {
+      font-size:14px;font-weight:600;margin-bottom:6px;color:#fff;
+      opacity:0.9;
+    }
+    .skills {display:flex;flex-wrap:wrap;gap:7px;}
+    .skill {
+      background:rgba(255,255,255,0.04);
+      padding:6px 9px;
+      border-radius:8px;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Experience */
+    .exp {display:grid;gap:14px;}
+    .job {display:flex;gap:14px;}
+    .job .meta {min-width:130px;font-size:13px;color:var(--muted);}
+    .job h3 {margin:0;font-size:16px;}
+    .job p {margin:6px 0 0;color:var(--muted);font-size:14px;}
+
+    /* Projects */
+    .projects {display:grid;gap:14px;}
+    .empty {
+      background:rgba(255,255,255,0.03);
+      padding:22px;border-radius:10px;
+      text-align:center;font-size:14px;color:var(--muted);
+    }
+
+    /* Contact */
+    .contact {display:flex;flex-direction:column;gap:10px;}
+    .btn {
+      padding:11px 14px;
+      background:linear-gradient(90deg,#38bdf8,#818cf8);
+      color:#091016;font-weight:700;
+      border-radius:11px;text-decoration:none;
+      box-shadow:0 4px 14px rgba(0,0,0,0.4);
+      transition:.22s ease;
+    }
+    .btn:hover {
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(0,0,0,0.55);
+    }
+
+    footer {margin-top:26px;text-align:center;font-size:14px;color:var(--muted);}
+    .divider {height:1px;background:rgba(255,255,255,0.05);margin:10px 0;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar">SB</div>
+        <div>
+          <h1>Stefano Bini</h1>
+          <p class="lead">Software Developer — Java & Spring | REST APIs | Microservices</p>
+
+          <div class="top-badges">
+            <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7EE91D2EEE463C355283CEAC8F61805CB5014EA6B4A92CCD198988BCA74C1F58" target="_blank">
+              <img class="badge-top-img" src="https://education.oracle.com/file/general/Oracle_University_Generic_Badge.png" alt="Oracle logo (OCA certification)">
+            </a>
+            <a href="https://openbadges.bestr.it/public/assertions/6VzzqveYTf6wTxDn7LyI0A" target="_blank">
+              <img class="badge-top-img" src="https://bestr.it/filemanager/show/3606499f-8a3c-4748-a045-42e165e85a07.png" alt="Bestr English Certification badge">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Left column -->
+      <div>
+        <section class="card hero section">
+          <h2>About me</h2>
+          <p class="muted">
+            I’m a software developer specializing in backend engineering and enterprise web applications.
+            My experience focuses on Java, the Spring ecosystem, RESTful APIs, and microservices, with additional work on front-end solutions using Vue.js.
+            I value clean code, maintainability, and the delivery of reliable, scalable software.
+          </p>
+          <div class="roles">
+            <span class="pill">Java</span>
+            <span class="pill">Spring</span>
+            <span class="pill">RESTful APIs</span>
+            <span class="pill">Microservices</span>
+            <span class="pill">Vue.js</span>
+            <span class="pill">Maven</span>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="card section">
+          <h2>Experience</h2>
+          <div class="exp">
+            <div class="job">
+              <div class="meta">Jul 2021 – Nov 2024<br><strong>Software Developer</strong></div>
+              <div class="body">
+                <h3>Fulcri SRL — B2B Enterprise Solutions</h3>
+                <p class="muted">
+                  Built scalable enterprise applications, customer portals, and backend services for pharmaceutical and technology clients.
+                </p>
+                <ul>
+                  <li>Developed enterprise portals using Java (8 & 21) and the Spring ecosystem.</li>
+                  <li>Designed and integrated REST APIs with internal and third-party systems.</li>
+                  <li>Contributed to microservices architecture and deployment pipelines.</li>
+                  <li>Led front-end development for a B2B portal (BTicino) using Vue.js.</li>
+                  <li>Worked in Agile/Scrum with QA, DevOps, and PM teams.</li>
+                  <li>Improved reliability through unit testing, debugging, and code reviews.</li>
+                  <li>Handled long-term client maintenance and production issue resolution.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="card section">
+          <h2>Projects</h2>
+          <div class="projects">
+            <div class="empty">
+              I’m preparing a set of public repositories showcasing backend projects, Java/Spring services, and personal explorations.
+              <br/>New projects will be published soon.
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="card section">
+          <h2>Education & Certifications</h2>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div>
+              <strong>Bachelor's Degree in Computer Science</strong> — Università degli Studi di Milano Bicocca  
+              <div class="muted">98 ECTS • Algorithms, Data Structures, Databases, OS, Software Engineering</div>
+            </div>
+
+            <div>
+              <strong>Oracle Certified Associate</strong> — Oracle  
+              <div class="muted"><a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7EE91D2EEE463C355283CEAC8F61805CB5014EA6B4A92CCD198988BCA74C1F58" style="color:var(--accent)">View credential</a></div>
+            </div>
+
+            <div>
+              <strong>Bestr B2 English Certification</strong>  
+              <div class="muted"><a href="https://openbadges.bestr.it/public/assertions/6VzzqveYTf6wTxDn7LyI0A" style="color:var(--accent)">View badge</a></div>
+            </div>
+
+            <div class="muted">IT Technician Diploma — Leonardo Da Vinci</div>
+            <div class="muted">BLSD Operator</div>
+          </div>
+        </section>
+
+        <!-- Volunteering -->
+        <section class="card section">
+          <h2>Volunteering</h2>
+          <ul class="muted">
+            <li>2024–2025 — Surf camp volunteer, Tamraght, Morocco</li>
+            <li>2024 — Environmental volunteer at music festival, Zernez, Switzerland</li>
+            <li>2021 — B&B support, Elba, Italy</li>
+            <li>2019 — Property maintenance, Albas, France</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+
+        <div class="card section">
+          <h2>Skills</h2>
+
+          <div class="skills-group">
+            <div class="skills-title">Backend Development</div>
+            <div class="skills">
+              <span class="skill">Java 8 & 21</span>
+              <span class="skill">Spring Boot</span>
+              <span class="skill">Spring Security</span>
+              <span class="skill">REST APIs</span>
+              <span class="skill">Microservices</span>
+              <span class="skill">SQL</span>
+              <span class="skill">Maven</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-title">DevOps & Tools</div>
+            <div class="skills">
+              <span class="skill">Git</span>
+              <span class="skill">SVN</span>
+              <span class="skill">CI/CD (Jenkins)</span>
+              <span class="skill">Atlassian Suite</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-title">Front-end</div>
+            <div class="skills">
+              <span class="skill">Vue.js</span>
+              <span class="skill">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-title">Methodologies</div>
+            <div class="skills">
+              <span class="skill">Agile / Scrum</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-title">Academic Languages</div>
+            <div class="skills">
+              <span class="skill">Common Lisp</span>
+              <span class="skill">Prolog</span>
+              <span class="skill">Assembly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h2>Contact</h2>
+          <div class="contact">
+            <div class="muted">Email</div>
+            <div>
+              <a class="btn" href="mailto:">
+                  hidden atm
+              </a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="muted">Links</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
+              <a class="pill" href="https://github.com/stefanobini99">GitHub</a>
+              <a class="pill" href="https://linkedin.com/in/stefano-bini-090045252">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h2>Languages</h2>
+          <div class="muted">Italian (native)</div>
+          <div class="muted">English — B2</div>
+          <div class="muted">Spanish — A1/A2</div>
+          <div class="muted">French — A1/A2</div>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      Built by Stefano Bini — Hosted on GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
