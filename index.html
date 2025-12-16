@@ -1,10 +1,10 @@
-<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="google-site-verification" content="_4ue6kCdju0tC77F8WgoSkbMvwsPx6aorZESOYhkbo8" />
-  
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="google-site-verification" content="_4ue6kCdju0tC77F8WgoSkbMvwsPx6aorZESOYhkbo8">
+
+    
   <title>Stefano Bini — Java Developer</title>
   <meta name="title" content="Stefano Bini — Java Developer">
   <meta name="description" content="Portfolio of Stefano Bini — Specialist in Java, Spring Boot, RESTful APIs, Microservices, and Enterprise Architecture.">
@@ -14,11 +14,11 @@
   <meta property="og:url" content="https://binistefano.github.io/">
   <meta property="og:title" content="Stefano Bini — Java Developer">
   <meta property="og:description" content="Specialist in Java, Spring Boot, RESTful APIs, Microservices, and Enterprise Architecture.">
-  <meta property="og:image" content="https://ui-avatars.com/api/?name=Stefano+Bini&background=0b1120&color=7dd3fc&size=512">
+  <meta property="og:image" content="https://ui-avatars.com/api/?name=Stefano+Bini&amp;background=0b1120&amp;color=7dd3fc&amp;size=512">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -123,18 +123,15 @@
       margin-top: 12px;
       display: flex;
       gap: 10px;
+      align-items: center; /* Ensures button aligns with images */
+      flex-wrap: wrap;
     }
     
     .badge-img {
       height: 32px;
       width: auto;
-      /*
-      opacity: 0.8;
-      transition: all 0.2s;
-      filter: grayscale(100%);
-      */
     }
-    .badge-img:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.15); }
+    .badge-img:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.15); transition: 0.2s; }
 
     /* Grid Layout */
     main {
@@ -249,6 +246,11 @@
       border: none;
       box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
     }
+    .btn-sm {
+        padding: 6px 14px;
+        font-size: 13px;
+        height: 32px; /* Matches badge height */
+    }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary:hover { box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4); }
 
@@ -260,12 +262,7 @@
       main { grid-template-columns: 1fr; }
       aside { order: 2; } /* Keeps sidebar at bottom */
       
-      /* Mobile tweak: Move important sidebar items to top? 
-         Instead, we use the .mobile-contact block */
       .mobile-contact { display: flex; }
-      
-      /* Hide the main contact card in sidebar on mobile to avoid duplication? 
-         Optional, but let's keep it for completeness */
     }
 
     @media (max-width: 600px) {
@@ -279,16 +276,71 @@
     @media print {
       body { background: white; color: black; }
       .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
-      .theme-toggle, #backToTop, .mobile-contact { display: none !important; }
+      .theme-toggle, #backToTop, .mobile-contact, .btn { display: none !important; }
       .tag { border: 1px solid #999; color: black; background: transparent; }
       a { text-decoration: underline; color: black; }
     }
     
     /* Utilities */
     .hidden { display: none; }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; }
+.btn-icon-text { display: flex; align-items: center; gap: 8px; }
+
+/* Ghost Button (Transparent with border) */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.btn-ghost:hover {
+  border-color: var(--text-muted);
+  color: var(--text-main);
+  background: rgba(255,255,255,0.03);
+}
+
+/* Status Widget in Footer */
+.status-list {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* The "Green Dot" Pulse Animation */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981; /* Emerald Green */
+  border-radius: 50%;
+  position: relative;
+}
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 50%;
+  border: 1px solid #10b981;
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
   </style>
 </head>
-<body>
+<body class="">
 
   <div class="wrap">
     <header>
@@ -296,18 +348,16 @@
         <div class="avatar">SB</div>
         <div class="brand-text">
           <h1>Stefano Bini</h1>
-          <div class="lead">Software Developer — Java & Spring Ecosystem</div>
+          <div class="lead">Software Developer — Java &amp; Spring Ecosystem</div>
           
           <div class="top-badges">
             <a target="_blank" href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7EE91D2EEE463C355283CEAC8F61805CB5014EA6B4A92CCD198988BCA74C1F58" title="Oracle Certified"><img class="badge-img" src="https://education.oracle.com/file/general/Oracle_University_Generic_Badge.png" alt="Oracle Badge"></a>
             <a target="_blank" href="https://openbadges.bestr.it/public/assertions/6VzzqveYTf6wTxDn7LyI0A" title="English B2"><img class="badge-img" src="https://bestr.it/filemanager/show/3606499f-8a3c-4748-a045-42e165e85a07.png" alt="English Badge"></a>
+            <a href="Bini_Stefano_CV.pdf" download="" class="btn btn-sm" style="gap:6px;">
+                <span style="font-size:16px;">⇩</span> Download CV
+            </a>
           </div>
-<!--
-          <div class="mobile-contact">
-            <a href="mailto:email@example.com" class="btn">Email Me</a>
-            <a href="https://linkedin.com/in/stefano-bini-090045252" class="btn">LinkedIn</a>
-          </div>
-          -->
+
         </div>
       </div>
 
@@ -329,7 +379,6 @@
           <div class="tags">
             <span class="tag">Java 21</span>
             <span class="tag">Spring Boot 3</span>
-            <!--<span class="tag">RESTful APIs</span>-->
             <span class="tag">Maven</span>
             <span class="tag">Microservices</span>
             <span class="tag">Vue.js</span>
@@ -358,19 +407,6 @@
         <section class="card">
           <h2 class="section-title">Java &amp; Microservices Projects</h2>
 
-          <!--
-          <div style="margin-bottom: 20px;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <h3 style="font-size:16px;">PharmaLogistics API (Private Enterprise)</h3>
-              <span class="tag" style="background:transparent; border:1px solid var(--text-muted); color:var(--text-muted);">NDA Protected</span>
-            </div>
-            <p style="margin-top:8px;">
-              Designed the core inventory management system for a pharmaceutical network. 
-              <br><strong>Tech:</strong> Spring Batch, Java 21, RabbitMQ, Oracle DB.
-            </p>
-          </div>
-          -->
-          
           <div style="margin-bottom: 20px;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <h3 style="font-size:16px;">
@@ -475,30 +511,49 @@
       <aside>
         
         <div class="card" style="position:sticky; top:20px;">
-          <h2 class="section-title">Get in Touch</h2>
-          <p style="font-size:14px;">Open to opportunities in Backend Development. The best way to reach me is via LinkedIn or GitHub.</p>
-          
-          <div style="display:grid; gap:10px;">
-              <!--
-            <a href="mailto:stefano@example.com" class="btn btn-primary">
-              Send Email
-            </a>
-            -->
-            <a target="_blank" href="https://linkedin.com/in/stefano-bini-090045252" class="btn btn-primary">
-              Connect on LinkedIn
-            </a>
-            <a target="_blank" href="https://github.com/binistefano" class="btn">
-              GitHub Profile
-            </a>
-          </div>
-          
-          <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
-             <div style="font-size:13px; color:var(--text-muted);">
-               📍 Based in Milan, Italy<br>
-               🌍 Currently only open to Remote
-             </div>
-          </div>
-        </div>
+  <h2 class="section-title">Get in Touch</h2>
+  <p style="font-size:14px; line-height:1.5; margin-bottom:24px;">
+    I am currently specializing in <strong>Backend Development</strong> and modernizing legacy systems.
+  </p>
+  
+  <div style="display:flex; flex-direction:column; gap:12px;">
+    
+    <a target="_blank" href="https://linkedin.com/in/stefano-bini-090045252" class="btn btn-primary btn-icon-text" style="justify-content:center;">
+      <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+      <span>Connect on LinkedIn</span>
+    </a>
+
+    <a href="mailto:binistefano.dev@gmail.com" class="btn btn-ghost btn-icon-text" style="justify-content:center;">
+       <svg viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"></path></svg>
+       <span>Send Me an Email</span>
+    </a>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+        <a href="stefano-bini-cv.pdf" download="" class="btn btn-ghost btn-icon-text" style="justify-content:center; padding:10px 12px; font-size:13px;">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+          <span>CV</span>
+        </a>
+        <a target="_blank" href="https://github.com/binistefano" class="btn btn-ghost btn-icon-text" style="justify-content:center; padding:10px 12px; font-size:13px;">
+          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+          <span>GitHub</span>
+        </a>
+    </div>
+
+  </div>
+  
+  <div class="status-list">
+     <div class="status-item">
+       <div class="status-dot"></div>
+       <span style="color:var(--text-main); font-weight:500;">Open to Remote</span>
+     </div>
+     <div class="status-item">
+       <span>📍</span> Based in Milan, Italy
+     </div>
+     <div class="status-item">
+       <span>🌍</span> Willing to Relocate
+     </div>
+  </div>
+</div>
 
         <div class="card">
           <h2 class="section-title">Tech Stack</h2>
@@ -506,7 +561,7 @@
           <div class="skill-group">
             <div class="skill-label">Backend Development</div>
             <div class="tags">
-              <span class="tag">Java 8 & 21</span>
+              <span class="tag">Java 8 &amp; 21</span>
               <span class="tag">Spring Boot</span>
               <span class="tag">Spring Security</span>
               <span class="tag">JPA / Hibernate</span>
@@ -518,7 +573,7 @@
           </div>
 
           <div class="skill-group">
-            <div class="skill-label">DevOps & Tools</div>
+            <div class="skill-label">DevOps &amp; Tools</div>
             <div class="tags">
               <span class="tag">CI / CD (Jenkins)</span>
               <span class="tag">SVN</span>
@@ -540,26 +595,26 @@
         </div>
         
         <div class="card">
-           <h2 class="section-title">Languages</h2>
-           <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:6px;">
-             <span>Italian</span> <span style="color:var(--text-muted)">Native</span>
-           </div>
-           <div style="display:flex; justify-content:space-between; font-size:14px;">
-             <span>English</span> <span style="color:var(--text-muted)">B2 (Professional - Certified)</span>
-           </div>
-           <div style="display:flex; justify-content:space-between; font-size:14px;">
-             <span>Spanish</span> <span style="color:var(--text-muted)">A2 (Basic)</span>
-           </div>
-           <div style="display:flex; justify-content:space-between; font-size:14px;">
-             <span>French / Dutch</span> <span style="color:var(--text-muted)">A1 (Basic)</span>
-           </div>
+            <h2 class="section-title">Languages</h2>
+            <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:6px;">
+              <span>Italian</span> <span style="color:var(--text-muted)">Native</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:14px;">
+              <span>English</span> <span style="color:var(--text-muted)">B2 (Professional - Certified)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:14px;">
+              <span>Spanish</span> <span style="color:var(--text-muted)">A2 (Basic)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:14px;">
+              <span>French / Dutch</span> <span style="color:var(--text-muted)">A1 (Basic)</span>
+            </div>
         </div>
 
       </aside>
     </main>
 
     <footer style="text-align:center; margin-top:40px; color:var(--text-muted); font-size:13px;">
-      <p>&copy; 2025 Stefano Bini. Built with Vanilla HTML/CSS.</p>
+      <p>© 2025 Stefano Bini. Built with Vanilla HTML/CSS.</p>
     </footer>
   </div>
 
@@ -584,5 +639,5 @@
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
   </script>
-</body>
-</html>
+
+</body></html>
